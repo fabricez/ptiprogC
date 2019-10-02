@@ -10,7 +10,6 @@ int main()
     if (ageSpectateur<=10)
         { printf ("billet enfant\n");}
      else if (ageSpectateur>17)
-        {printf("billet adulte\n");}
      else
         printf("billet adolescent___________\n");
     return 0;
