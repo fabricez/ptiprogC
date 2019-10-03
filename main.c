@@ -7,11 +7,24 @@ int main()
 
     printf("bonjour quel age avez vous ?\n");
     scanf("%d", &ageSpectateur);
+
     if (ageSpectateur<=10)
-        { printf ("billet enfant\n");}
-     else if (ageSpectateur>17)
-        {printf("billet papou-------\n");}
-     else
-        printf("billet adolescent___________\n");
+    {
+        afficherAgeEtQualite("enfant",ageSpectateur);
+    }
+    else if (ageSpectateur>17)
+    {
+        afficherAgeEtQualite("adulte",ageSpectateur);
+    }
+    else
+    {
+        afficherAgeEtQualite("ado",ageSpectateur);
+    }
+
     return 0;
+}
+/* function afficherAgeEtQualite definition */
+void afficherAgeEtQualite( char qualite, int age)
+{
+    printf("Qualite : %d\nAge : %d\nAnnee de naissance : %d", qualite, age, 2019-age);
 }
