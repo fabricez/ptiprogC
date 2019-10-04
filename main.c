@@ -24,7 +24,7 @@ int main()
     return 0;
 }
 /* function afficherAgeEtQualite definition */
-void afficherAgeEtQualite( char qualite, int age)
+void afficherAgeEtQualite( char qualite[50], int age)
 {
-    printf("Qualite : %d\nAge : %d\nAnnee de naissance : %d", qualite, age, 2019-age);
+    printf("Qualite : %s\nAge : %d\nAnnee de naissance : %d", qualite, age, 2019-age);
 }
