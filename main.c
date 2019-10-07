@@ -3,28 +3,53 @@
 
 int main()
 {
-    int ageSpectateur = 0 ;
+    char answer;
+    do
+    {
+        askForAge();
+        printf("\nPress Y to continue. Press any Key To Exit");
+        scanf(" %c",&answer); // dont forget type &
+    }
+    while(answer == 'y' || answer == 'Y');
 
+    return 0;
+}
+
+/* function askForAge definition */
+void askForAge()
+{
+    int ageSpectateur = 0;
     printf("bonjour quel age avez vous ?\n");
     scanf("%d", &ageSpectateur);
+    printf("Annee de naissance : %d\n", 2019-ageSpectateur);
 
-    if (ageSpectateur<=10)
+    int i = 0;
+    while (i <= ageSpectateur && i <= 110)
     {
-        afficherAgeEtQualite("enfant",ageSpectateur);
-    }
-    else if (ageSpectateur>17)
-    {
-        afficherAgeEtQualite("adulte",ageSpectateur);
-    }
-    else
-    {
-        afficherAgeEtQualite("ado",ageSpectateur);
+        testerAge(i,ageSpectateur);
+        i++;//i = i +1
     }
 
     return 0;
 }
-/* function afficherAgeEtQualite definition */
-void afficherAgeEtQualite( char qualite[50], int age)
+/* function testerAge definition */
+void testerAge( int increment, int age)
 {
-    printf("Qualite : %s\nAge : %d\nAnnee de naissance : %d", qualite, age, 2019-age);
+    if (increment<=10)
+    {
+        afficherAgeEtQualite("enfant", increment, age);
+    }
+    else if (increment>17)
+    {
+        afficherAgeEtQualite("adulte", increment, age);
+    }
+    else
+    {
+        afficherAgeEtQualite("ado", increment, age);
+    }
+}
+/* function afficherAgeEtQualite definition */
+void afficherAgeEtQualite( char qualite[50], int increment, int age)
+{
+    printf("Année: %d Age : %d (%s)\n", 2019 - age + increment, increment, qualite);
 }
